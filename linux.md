@@ -280,6 +280,41 @@
 				2，将方式1的导出操作添加到文件 ~/.bashrc的末尾
 		
 ### 12.文件的压缩
+	gzip：
+		作用：压缩文件，只能够是单个文件，不能够是多个，也不能是目录
+		格式：gzip file
+		说明：执行命令会生成file.gz, 删除原来的文件
+		选项： -d 等价于gunzip
+	gunzip:
+		作用：解压使用gzip压缩生存的文件
+		格式：gunzip file.gz
+		说明：解压file.gz文件，生存file,删除原来的file.gz
+	
+	bzip2/bunzip2:
+		说明：
+			1.用法与gzip/gunzip相同，只是多了‘-k’参数，压缩或者解压后保留源文件
+			2.使用bzip2压缩后的文件后缀为bz2，使用gzip压缩的文件后缀为gz
+	
+	tar :
+		说明:gzip/gunzip/bzip2/bunzip2命令只是用于单个文件
+			而tar则可以将多个文件或者目录进行压缩
+		
+		选项：
+			-c: 压缩
+			-x: 解压
+			-z: 使用gzip
+			-j: 使用bzip2
+			-f: 指定处理文件
+			-v: 显示（压缩或解压过程的）详细信息
+			-C: 指定解压后存放文件的目录
+			
+			实例：
+				tar -zcvf 123.tar.gz 1 2 3
+				使用gzip将1 2 3 压缩成123.tar.gz
+				
+				tar -zxvf 123.tar.gz [-C /tmp]
+				使用gzip将123.tar.gz解压【至/tmp目录】
+		
 		
 		
 		
